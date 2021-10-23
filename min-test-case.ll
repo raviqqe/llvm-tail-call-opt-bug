@@ -52,7 +52,6 @@ else2:                                            ; preds = %phi
   ret {} %_result16
 
 phi3:                                             ; No predecessors!
-  call void @_pen_unreachable()
   unreachable
 
 then4:                                            ; preds = %then1
@@ -63,7 +62,6 @@ else5:                                            ; preds = %then1
   ret {} %_result15
 
 phi6:                                             ; No predecessors!
-  call void @_pen_unreachable()
   unreachable
 
 then7:                                            ; preds = %then4
@@ -76,7 +74,6 @@ else8:                                            ; preds = %then4
   ret {} %_result14
 
 phi9:                                             ; No predecessors!
-  call void @_pen_unreachable()
   unreachable
 
 then10:                                           ; preds = %then7
@@ -92,7 +89,6 @@ else11:                                           ; preds = %then7
   ret {} %_result13
 
 phi12:                                            ; No predecessors!
-  call void @_pen_unreachable()
   unreachable
 }
 
@@ -119,10 +115,8 @@ then:                                             ; preds = %entry
   ret {} %_result
 
 else:                                             ; preds = %entry
-  call void @_pen_unreachable()
   unreachable
 
 phi:                                              ; No predecessors!
-  call void @_pen_unreachable()
   unreachable
 }
