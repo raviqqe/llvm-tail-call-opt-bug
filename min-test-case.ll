@@ -1,3 +1,19 @@
+@None = linkonce constant { {} (i64)*, {} (i64)* } { {} (i64)* @variant_clone_None, {} (i64)* @variant_drop_None }
+@"Record(Record { name: \22prelude:error\22 })" = linkonce constant { {} (i64)*, {} (i64)* } { {} (i64)* @"variant_clone_Record(Record { name: \22prelude:error\22 })", {} (i64)* @"variant_drop_Record(Record { name: \22prelude:error\22 })" }
+@"/main.pen:serve" = constant { {} ({ i8*, i64, i64 }*, {} ({ i8*, i64, i64 }*, { { {} (i64)*, {} (i64)* }*, i64 })*, {}*, {}*, {}*)*, {} (i64)*, {} } { {} ({ i8*, i64, i64 }*, {} ({ i8*, i64, i64 }*, { { {} (i64)*, {} (i64)* }*, i64 })*, {}*, {}*, {}*)* @_fmm_2cd, {} (i64)* @_fmm_333, {} zeroinitializer }
+
+declare void @_pen_free(i8*)
+declare fastcc {} @_fmm_2cd({ i8*, i64, i64 }* %0, {} ({ i8*, i64, i64 }*, { { {} (i64)*, {} (i64)* }*, i64 })* %1, {}* %2, {}* %3, {}* %4)
+declare {} @_fmm_333(i64 %0)
+declare {} @variant_clone_None(i64 %0)
+declare {} @variant_drop_None(i64 %0)
+declare {} @"variant_clone_Record(Record { name: \22prelude:error\22 })"(i64 %0)
+declare {} @"variant_drop_Record(Record { name: \22prelude:error\22 })"(i64 %0)
+declare fastcc {} @_if_2e({ i8*, i64, i64 }* %0, {} ({ i8*, i64, i64 }*, { { {} (i64)*, {} (i64)* }*, i64 })* %1, {}* %2, { i64, i8 }* %3, {}* %4, {}* %5)
+declare fastcc {} @_if_3d({ i8*, i64, i64 }* %0, {} ({ i8*, i64, i64 }*, { { {} (i64)*, {} (i64)* }*, i64 })* %1, {}* %2, { i64, i8 }* %3, {}* %4, {}* %5, {}* %6)
+declare fastcc {} @_if_48({ i8*, i64, i64 }* %0, {} ({ i8*, i64, i64 }*, { { {} (i64)*, {} (i64)* }*, i64 })* %1, {}* %2, { i64, i8 }* %3, {}* %4, {}* %5, {}* %6)
+declare fastcc {} @_if_4a({ i8*, i64, i64 }* %0, {} ({ i8*, i64, i64 }*, { { {} (i64)*, {} (i64)* }*, i64 })* %1, {}* %2, { i64, i8 }* %3, {}* %4, {}* %5, {}* %6)
+
 define internal fastcc {} @_k_8f({ i8*, i64, i64 }* %0, { { {} (i64)*, {} (i64)* }*, i64 } %1) {
 entry:
   %2 = getelementptr { i8*, i64, i64 }, { i8*, i64, i64 }* %0, i32 0, i32 1
