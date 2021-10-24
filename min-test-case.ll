@@ -5,13 +5,13 @@ declare fastcc {} @bar({}* %0, {}* %1, {}* %2, {}* %3, {}* %4, {}* %5)
 define fastcc {} @main() {
 entry:
   %_11 = icmp eq i64 42, ptrtoint ({}* @Foo to i64)
-  br i1 %_11, label %then1, label %else2
+  br i1 %_11, label %then, label %else
 
-else2:
+else:
   %result = tail call fastcc {} @foo({}* @Foo, {}* @Foo, {}* @Foo, {}* @Foo, { i64, i64 } zeroinitializer, {}* @Foo, {}* @Foo)
   ret {} %result
 
-then1:                                             ; No predecessors!
+then:
   ; Comment the line below to fix compile.
   %dummy = alloca i64
   unreachable
