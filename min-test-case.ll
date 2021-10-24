@@ -1,8 +1,6 @@
 @None = linkonce constant i64 0
 @Record = linkonce constant i64 0
 
-declare {} @"variant_clone_Record(Record { name: \22prelude:error\22 })"(i64 %0)
-declare {} @"variant_drop_Record(Record { name: \22prelude:error\22 })"(i64 %0)
 declare fastcc {} @_if_2e({ i8*, i64, i64 }* %0, {} ({ i8*, i64, i64 }*, { { {} (i64)*, {} (i64)* }*, i64 })* %1, {}* %2, { i64, i8 }* %3, {}* %4, {}* %5)
 
 define fastcc {} @_k_8f({ i8*, i64, i64 }* %0, { { {} (i64)*, {} (i64)* }*, i64 } %1) {
