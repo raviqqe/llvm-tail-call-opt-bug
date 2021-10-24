@@ -1,5 +1,5 @@
 @None = linkonce constant i64 0
-@"Record(Record { name: \22prelude:error\22 })" = linkonce constant { {} (i64)*, {} (i64)* } { {} (i64)* @"variant_clone_Record(Record { name: \22prelude:error\22 })", {} (i64)* @"variant_drop_Record(Record { name: \22prelude:error\22 })" }
+@Record = linkonce constant i64 0
 
 declare {} @"variant_clone_Record(Record { name: \22prelude:error\22 })"(i64 %0)
 declare {} @"variant_drop_Record(Record { name: \22prelude:error\22 })"(i64 %0)
@@ -26,7 +26,7 @@ entry:
   %l = extractvalue { {} ({ i8*, i64, i64 }*, { { {} (i64)*, {} (i64)* }*, i64 })*, {}*, { i64, i8 }*, {}*, {}* } %_k_98, 4
   %_fmm_303 = extractvalue { { {} (i64)*, {} (i64)* }*, i64 } %1, 0
   %10 = ptrtoint { {} (i64)*, {} (i64)* }* %_fmm_303 to i64
-  %11 = icmp eq i64 %10, ptrtoint ({ {} (i64)*, {} (i64)* }* @"Record(Record { name: \22prelude:error\22 })" to i64)
+  %11 = icmp eq i64 %10, ptrtoint (i64* @Record to i64)
   br i1 %11, label %then1, label %else2
 
 else2:                                            ; preds = %phi
