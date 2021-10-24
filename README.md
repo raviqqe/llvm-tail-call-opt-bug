@@ -1,5 +1,7 @@
 # Stack pointer offset miscalculation bug for spilled arguments with `llc -tailcallopt`
 
+> This bug is fixed already at HEAD of the LLVM's Git repository as of 2021/10/24.
+
 This repository contains a sample program that fails due to a bug where `llc`'s `-tailcallopt` option calculates wrong stack pointer offsets for spilled arguments.
 
 ## Reproducing the bug
