@@ -1,6 +1,6 @@
 @Foo = external global {}
 
-declare fastcc {} @bar({}* %0, {}* %1, {}* %2, {}* %3, {}* %4, {}* %5)
+declare fastcc {} @bar(i64 %0, i64 %1, i64 %2, i64 %3, i64 %4, i64 %5)
 
 define fastcc {} @main() {
 entry:
@@ -8,7 +8,7 @@ entry:
   br i1 %_11, label %then, label %else
 
 else:
-  %result = tail call fastcc {} @foo({}* @Foo, {}* @Foo, {}* @Foo, {}* @Foo, { i64, i64 } zeroinitializer, {}* @Foo, {}* @Foo)
+  %result = tail call fastcc {} @foo(i64 42, i64 42, i64 42, i64 42, i64 42, i64 42, i64 42, i64 42)
   ret {} %result
 
 then:
@@ -17,8 +17,8 @@ then:
   unreachable
 }
 
-define fastcc {} @foo({}* %0, {}* %1, {}* %2, {}* %3, { i64, i64 } %4, {}* %5, {}* %6) {
+define fastcc {} @foo(i64 %0, i64 %1, i64 %2, i64 %3, i64 %4, i64 %5, i64 %6, i64 %7) {
 entry:
-  %_result = tail call fastcc {} @bar({}* %0, {}* %1, {}* %2, {}* %3, {}* %5, {}* %6)
+  %_result = tail call fastcc {} @bar(i64 %0, i64 %1, i64 %2, i64 %3, i64 %5, i64 %6)
   ret {} %_result
 }
