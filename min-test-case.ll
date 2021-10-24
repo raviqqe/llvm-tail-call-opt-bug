@@ -17,6 +17,10 @@ then:
   unreachable
 }
 
+define void @separator() {
+  ret void
+}
+
 define fastcc {} @foo(i64 %0, i64 %1, i64 %2, i64 %3, i64 %4, i64 %5, i64 %6, i64 %7) {
 entry:
   %result = tail call fastcc {} @bar(i64 %6, i64 %7)
