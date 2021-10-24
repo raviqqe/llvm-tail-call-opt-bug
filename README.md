@@ -24,6 +24,31 @@ zsh: segmentation fault (core dumped)  ./a.out
 139
 ```
 
+## Environment
+
+```sh
+> uname -a
+Linux vps-bd8d07d6 5.14.8-arch1-1 #1 SMP PREEMPT Sun, 26 Sep 2021 19:36:15 +0000 x86_64 GNU/Linux
+
+> cat /etc/os-release
+NAME="Arch Linux"
+PRETTY_NAME="Arch Linux"
+ID=arch
+BUILD_ID=rolling
+ANSI_COLOR="38;2;23;147;209"
+HOME_URL="https://archlinux.org/"
+DOCUMENTATION_URL="https://wiki.archlinux.org/"
+SUPPORT_URL="https://bbs.archlinux.org/"
+BUG_REPORT_URL="https://bugs.archlinux.org/"
+LOGO=archlinux
+
+> llc --version
+Homebrew LLVM version 13.0.0
+  Optimized build.
+  Default target: x86_64-unknown-linux-gnu
+  Host CPU: haswell
+```
+
 ## References
 
 - [The original Gist](https://gist.github.com/raviqqe/64f04ff498b8aabb5231ddaefb5023e5)
