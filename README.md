@@ -1,6 +1,6 @@
-# Segmentation fault with `llc -tailcallopt`
+# Stack pointer offset miscalculation bug for spilled arguments with `llc -tailcallopt`
 
-This repository contains a sample program that fails due to a bug where `llc`'s `-tailcallopt` option calculates wrong stack pointer offsets.
+This repository contains a sample program that fails due to a bug where `llc`'s `-tailcallopt` option calculates wrong stack pointer offsets for spilled arguments.
 
 ## Reproducing the bug
 
