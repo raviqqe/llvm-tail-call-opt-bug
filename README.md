@@ -24,6 +24,10 @@ zsh: segmentation fault (core dumped)  ./a.out
 139
 ```
 
+## References
+
+- [The original Gist](https://gist.github.com/raviqqe/64f04ff498b8aabb5231ddaefb5023e5)
+
 ## License
 
 [The Unlicense](UNLICENSE)
