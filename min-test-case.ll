@@ -8,7 +8,7 @@ entry:
   br i1 %0, label %then, label %else
 
 else:
-  %result = tail call fastcc {} @foo(i64 42, i64 42, i64 42, i64 42, i64 42, i64 42, i64 42, i64 42)
+  %result = tail call fastcc {} @foo(i64 0, i64 1, i64 2, i64 3, i64 4, i64 5, i64 6, i64 7)
   ret {} %result
 
 then:
@@ -19,6 +19,6 @@ then:
 
 define fastcc {} @foo(i64 %0, i64 %1, i64 %2, i64 %3, i64 %4, i64 %5, i64 %6, i64 %7) {
 entry:
-  %_result = tail call fastcc {} @bar(i64 %0, i64 %1, i64 %2, i64 %3, i64 %5, i64 %6)
-  ret {} %_result
+  %result = tail call fastcc {} @bar(i64 %0, i64 %1, i64 %2, i64 %3, i64 %5, i64 %6)
+  ret {} %result
 }
