@@ -21,6 +21,7 @@ then:
   ; - Comment out the line of alloca below.
   ; - Reduce the @foo function's arguments not to spill arguments onto stacks.
   ; - Disable the -tailcallopt option of llc.
+  ; - Set a RSP register's value manually in LLDB. haha
   %dummy = alloca i64
   unreachable
 }
