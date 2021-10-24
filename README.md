@@ -8,7 +8,7 @@
 echo $?
 ```
 
-Also, try fixing segmentation fault following instructions in `min-test-case.ll`.
+Also, try fixing segmentation fault following workaround instructions in `min-test-case.ll`.
 
 ## Result
 
