@@ -4,8 +4,8 @@ declare fastcc {} @bar(i64 %0, i64 %1, i64 %2, i64 %3, i64 %4, i64 %5)
 
 define fastcc {} @main() {
 entry:
-  %_11 = icmp eq i64 42, ptrtoint ({}* @Foo to i64)
-  br i1 %_11, label %then, label %else
+  %0 = icmp eq i64 42, ptrtoint ({}* @Foo to i64)
+  br i1 %0, label %then, label %else
 
 else:
   %result = tail call fastcc {} @foo(i64 42, i64 42, i64 42, i64 42, i64 42, i64 42, i64 42, i64 42)
