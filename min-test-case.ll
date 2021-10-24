@@ -17,7 +17,8 @@ else:
   ret {} %result
 
 then:
-  ; Comment the line below to fix compile.
+  ; Comment out the line below or reduce the @foo function's arguments not to
+  ; spill arguments in order to fix the binary.
   %dummy = alloca i64
   unreachable
 }
