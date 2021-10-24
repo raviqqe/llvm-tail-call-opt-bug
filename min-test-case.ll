@@ -17,8 +17,10 @@ else:
   ret {} %result
 
 then:
-  ; Comment out the line below or reduce the @foo function's arguments not to
-  ; spill arguments in order to fix the binary.
+  ; To make a binary work, try one of the following workarounds.
+  ; - Comment out the line of alloca below.
+  ; - Reduce the @foo function's arguments not to spill arguments onto stacks.
+  ; - Disable the -tailcallopt option of llc.
   %dummy = alloca i64
   unreachable
 }
