@@ -9,3 +9,7 @@ echo $?
 ```
 
 Also, try fixing segmentation fault following instructions in `min-test-case.ll`.
+
+## License
+
+[The Unlicense](UNLICENSE)
