@@ -1,11 +1,10 @@
-@Bar = linkonce constant i64 0
 @Foo = external global {}
 
 declare fastcc {} @_if_2e({}* %0, {}* %1, {}* %2, {}* %3, {}* %4, {}* %5)
 
 define fastcc {} @main() {
 entry:
-  %_11 = icmp eq i64 42, ptrtoint (i64* @Bar to i64)
+  %_11 = icmp eq i64 42, ptrtoint ({}* @Foo to i64)
   br i1 %_11, label %then1, label %else2
 
 else2:
