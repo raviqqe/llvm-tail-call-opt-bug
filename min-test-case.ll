@@ -1,5 +1,5 @@
 @Bar = linkonce constant i64 0
-@Foo = linkonce constant {} {}
+@Foo = external global {}
 
 declare fastcc {} @_if_2e({}* %0, {}* %1, {}* %2, {}* %3, {}* %4, {}* %5)
 
