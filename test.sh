@@ -16,6 +16,8 @@ test_offset
 sed -i 's/%dummy/;%dummy/' min-test-case.ll
 
 compile
-! test_offset
+if test_offset; then
+  exit 1
+fi
 
 git checkout .
