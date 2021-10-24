@@ -41,17 +41,6 @@ then1:                                             ; No predecessors!
 
 define fastcc {} @_if_2d({ i8*, i64, i64 }* %0, {} ({ i8*, i64, i64 }*, { { {} (i64)*, {} (i64)* }*, i64 })* %1, {}* %2, { i64, i8 }* %3, { { {} (i64)*, {} (i64)* }*, i64 } %4, {}* %5, {}* %6) {
 entry:
-  %_fmm_316 = extractvalue { { {} (i64)*, {} (i64)* }*, i64 } %4, 1
-  %_9 = insertvalue { i64, [0 x i8] } zeroinitializer, i64 %_fmm_316, 0
-  %_10 = alloca { i64, [0 x i8] }, align 8
-  store { i64, [0 x i8] } %_9, { i64, [0 x i8] }* %_10, align 4
-  %_11 = bitcast { i64, [0 x i8] }* %_10 to { [1 x i64] }*
-  %_12 = load { [1 x i64] }, { [1 x i64] }* %_11, align 4
-  %_13 = alloca { [1 x i64] }, align 8
-  store { [1 x i64] } %_12, { [1 x i64] }* %_13, align 4
-  %_14 = bitcast { [1 x i64] }* %_13 to { {}, [8 x i8] }*
-  %_15 = load { {}, [8 x i8] }, { {}, [8 x i8] }* %_14, align 1
-  %_fmm_317 = extractvalue { {}, [8 x i8] } %_15, 0
   %_result = tail call fastcc {} @_if_2e({ i8*, i64, i64 }* %0, {} ({ i8*, i64, i64 }*, { { {} (i64)*, {} (i64)* }*, i64 })* %1, {}* %2, { i64, i8 }* %3, {}* %5, {}* %6)
   ret {} %_result
 }
