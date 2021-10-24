@@ -89,6 +89,7 @@ Homebrew LLVM version 13.0.0
 - [x86-64 Architecture Guide](http://6.s081.scripts.mit.edu/sp18/x86-64-architecture-guide.html)
 - [x64 cheat sheet](https://cs.brown.edu/courses/cs033/docs/guides/x64_cheatsheet.pdf)
 - [GDB to LLDB command map](https://lldb.llvm.org/use/map.html#examining-variables)
+- [LLVM bug list](https://bugs.llvm.org/buglist.cgi?bug_status=__all__&content=tail%20spill&no_redirect=1&order=changeddate%20DESC%2Cpriority%2Cbug_severity&query_format=specific)
 
 ## License
 
