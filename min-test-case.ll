@@ -2,7 +2,12 @@
 
 declare void @bar(i64 %0, i64 %1)
 
-define fastcc {} @main() {
+define i64 @main() {
+  call fastcc {} @run()
+  ret i64 42
+}
+
+define fastcc {} @run() {
 entry:
   %condition = icmp eq i64 42, ptrtoint ({}* @Foo to i64)
   br i1 %condition, label %then, label %else
