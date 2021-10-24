@@ -83,7 +83,4 @@ then:                                             ; preds = %entry
 
 else:                                             ; preds = %entry
   unreachable
-
-phi:                                              ; No predecessors!
-  unreachable
 }
