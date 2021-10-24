@@ -49,62 +49,13 @@ phi:                                              ; preds = %else, %then
   %11 = icmp eq i64 %10, ptrtoint ({ {} (i64)*, {} (i64)* }* @"Record(Record { name: \22prelude:error\22 })" to i64)
   br i1 %11, label %then1, label %else2
 
-then1:                                            ; preds = %phi
-  %_fmm_304 = extractvalue { { {} (i64)*, {} (i64)* }*, i64 } %1, 1
-  %12 = insertvalue { i64, [0 x i8] } zeroinitializer, i64 %_fmm_304, 0
-  %13 = alloca { i64, [0 x i8] }, align 8
-  store { i64, [0 x i8] } %12, { i64, [0 x i8] }* %13, align 4
-  %14 = bitcast { i64, [0 x i8] }* %13 to { [1 x i64] }*
-  %15 = load { [1 x i64] }, { [1 x i64] }* %14, align 4
-  %16 = alloca { [1 x i64] }, align 8
-  store { [1 x i64] } %15, { [1 x i64] }* %16, align 4
-  %17 = bitcast { [1 x i64] }* %16 to { {}*, [0 x i8] }*
-  %18 = load { {}*, [0 x i8] }, { {}*, [0 x i8] }* %17, align 8
-  %_fmm_305 = extractvalue { {}*, [0 x i8] } %18, 0
-  br i1 icmp ne (i64 or (i64 ptrtoint ({ {} ({ i8*, i64, i64 }*, {} ({ i8*, i64, i64 }*, { { {} (i64)*, {} (i64)* }*, i64 })*, {}*, {}*, {}*)*, {} (i64)*, {} }* @"/main.pen:serve" to i64), i64 1), i64 0), label %then4, label %else5
-
 else2:                                            ; preds = %phi
   %_result16 = tail call fastcc {} @_if_2d({ i8*, i64, i64 }* %0, {} ({ i8*, i64, i64 }*, { { {} (i64)*, {} (i64)* }*, i64 })* %_k, {}* %_fmm_2e2, { i64, i8 }* %_fmm_2fc, { { {} (i64)*, {} (i64)* }*, i64 } %1, {}* %ctx, {}* %l)
   ret {} %_result16
 
-phi3:                                             ; No predecessors!
-  unreachable
-
-then4:                                            ; preds = %then1
-  br i1 icmp ne (i64 and (i64 or (i64 ptrtoint ({ {} ({ i8*, i64, i64 }*, {} ({ i8*, i64, i64 }*, { { {} (i64)*, {} (i64)* }*, i64 })*, {}*, {}*, {}*)*, {} (i64)*, {} }* @"/main.pen:serve" to i64), i64 1), i64 1), i64 1), label %then7, label %else8
-
-else5:                                            ; preds = %then1
-  %_result15 = tail call fastcc {} @_if_3d({ i8*, i64, i64 }* %0, {} ({ i8*, i64, i64 }*, { { {} (i64)*, {} (i64)* }*, i64 })* %_k, {}* %_fmm_2e2, { i64, i8 }* %_fmm_2fc, {}* %_fmm_305, {}* %ctx, {}* %l)
-  ret {} %_result15
-
-phi6:                                             ; No predecessors!
-  unreachable
-
-then7:                                            ; preds = %then4
-  %19 = atomicrmw sub i64* getelementptr (i64, i64* inttoptr (i64 or (i64 ptrtoint ({ {} ({ i8*, i64, i64 }*, {} ({ i8*, i64, i64 }*, { { {} (i64)*, {} (i64)* }*, i64 })*, {}*, {}*, {}*)*, {} (i64)*, {} }* @"/main.pen:serve" to i64), i64 1) to i64*), i64 -1), i64 1 release, align 8
-  %20 = icmp eq i64 %19, 0
-  br i1 %20, label %then10, label %else11
-
-else8:                                            ; preds = %then4
-  %_result14 = tail call fastcc {} @_if_48({ i8*, i64, i64 }* %0, {} ({ i8*, i64, i64 }*, { { {} (i64)*, {} (i64)* }*, i64 })* %_k, {}* %_fmm_2e2, { i64, i8 }* %_fmm_2fc, {}* %_fmm_305, {}* %ctx, {}* %l)
-  ret {} %_result14
-
-phi9:                                             ; No predecessors!
-  unreachable
-
-then10:                                           ; preds = %then7
-  fence acquire
-  %_fmm_307 = load {} (i64)*, {} (i64)** getelementptr ({ {} ({ i8*, i64, i64 }*, {} ({ i8*, i64, i64 }*, { { {} (i64)*, {} (i64)* }*, i64 })*, {}*, {}*, {}*)*, {} (i64)*, {} }, { {} ({ i8*, i64, i64 }*, {} ({ i8*, i64, i64 }*, { { {} (i64)*, {} (i64)* }*, i64 })*, {}*, {}*, {}*)*, {} (i64)*, {} }* inttoptr (i64 and (i64 or (i64 ptrtoint ({ {} ({ i8*, i64, i64 }*, {} ({ i8*, i64, i64 }*, { { {} (i64)*, {} (i64)* }*, i64 })*, {}*, {}*, {}*)*, {} (i64)*, {} }* @"/main.pen:serve" to i64), i64 1), i64 -2) to { {} ({ i8*, i64, i64 }*, {} ({ i8*, i64, i64 }*, { { {} (i64)*, {} (i64)* }*, i64 })*, {}*, {}*, {}*)*, {} (i64)*, {} }*), i32 0, i32 1), align 8
-  %_fmm_308 = tail call {} %_fmm_307(i64 or (i64 ptrtoint ({ {} ({ i8*, i64, i64 }*, {} ({ i8*, i64, i64 }*, { { {} (i64)*, {} (i64)* }*, i64 })*, {}*, {}*, {}*)*, {} (i64)*, {} }* @"/main.pen:serve" to i64), i64 1))
-  call void @_pen_free(i8* bitcast (i64* getelementptr (i64, i64* inttoptr (i64 or (i64 ptrtoint ({ {} ({ i8*, i64, i64 }*, {} ({ i8*, i64, i64 }*, { { {} (i64)*, {} (i64)* }*, i64 })*, {}*, {}*, {}*)*, {} (i64)*, {} }* @"/main.pen:serve" to i64), i64 1) to i64*), i64 -1) to i8*))
-  %_result = tail call fastcc {} @_if_4a({ i8*, i64, i64 }* %0, {} ({ i8*, i64, i64 }*, { { {} (i64)*, {} (i64)* }*, i64 })* %_k, {}* %_fmm_2e2, { i64, i8 }* %_fmm_2fc, {}* %_fmm_305, {}* %ctx, {}* %l)
-  ret {} %_result
-
-else11:                                           ; preds = %then7
-  %_result13 = tail call fastcc {} @_if_4a({ i8*, i64, i64 }* %0, {} ({ i8*, i64, i64 }*, { { {} (i64)*, {} (i64)* }*, i64 })* %_k, {}* %_fmm_2e2, { i64, i8 }* %_fmm_2fc, {}* %_fmm_305, {}* %ctx, {}* %l)
-  ret {} %_result13
-
-phi12:                                            ; No predecessors!
+then1:                                             ; No predecessors!
+  ; Comment the line below to fix compile.
+  %dummy = alloca i64
   unreachable
 }
 
