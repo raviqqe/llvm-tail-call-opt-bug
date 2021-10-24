@@ -1,6 +1,6 @@
 @Foo = external global {}
 
-declare fastcc {} @bar(i64 %0, i64 %1, i64 %2, i64 %3, i64 %4, i64 %5)
+declare fastcc {} @bar(i64 %0, i64 %1)
 
 define fastcc {} @main() {
 entry:
@@ -19,6 +19,6 @@ then:
 
 define fastcc {} @foo(i64 %0, i64 %1, i64 %2, i64 %3, i64 %4, i64 %5, i64 %6, i64 %7) {
 entry:
-  %result = tail call fastcc {} @bar(i64 %0, i64 %1, i64 %2, i64 %3, i64 %5, i64 %6)
+  %result = tail call fastcc {} @bar(i64 %6, i64 %7)
   ret {} %result
 }
