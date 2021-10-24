@@ -48,7 +48,7 @@ A `run` function is compiled wrongly and calls a `foo` function with a wrong sta
       5d: 41 b8 04 00 00 00            	movl	$4, %r8d
       63: 41 b9 05 00 00 00            	movl	$5, %r9d
       69: 31 ff                        	xorl	%edi, %edi
-      6b: 48 8d 65 f0                  	leaq	-16(%rbp), %rsp # This offset should be 0.
+      6b: 48 8d 65 f0                  	leaq	-16(%rbp), %rsp # This offset should be 0 rather than -16.
       6f: 5d                           	popq	%rbp
       70: e9 00 00 00 00               	jmp	0x75 <run+0x55>
       75: 48 89 e0                     	movq	%rsp, %rax
