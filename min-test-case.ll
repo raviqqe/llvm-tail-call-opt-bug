@@ -1,4 +1,4 @@
-@Foo = external global {}
+@Foo = global {} {}
 
 declare void @bar(i64 %0, i64 %1)
 
