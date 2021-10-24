@@ -11,18 +11,8 @@ define fastcc {} @_k_8f({ i8*, i64, i64 }* %0, { { {} (i64)*, {} (i64)* }*, i64 
 entry:
   %2 = getelementptr { i8*, i64, i64 }, { i8*, i64, i64 }* %0, i32 0, i32 1
   %_k_94 = load i64, i64* %2, align 4
-  br i1 false, label %then, label %else
-
-then:                                             ; preds = %entry
-  br label %phi
-
-else:                                             ; preds = %entry
-  br label %phi
-
-phi:                                              ; preds = %else, %then
-  %_k_95 = phi i64 [ 0, %then ], [ 40, %else ]
   %3 = getelementptr { i8*, i64, i64 }, { i8*, i64, i64 }* %0, i32 0, i32 1
-  %4 = sub i64 %_k_94, %_k_95
+  %4 = sub i64 %_k_94, 0
   store i64 %4, i64* %3, align 4
   %5 = getelementptr { i8*, i64, i64 }, { i8*, i64, i64 }* %0, i32 0, i32 0
   %_k_96 = load i8*, i8** %5, align 8
