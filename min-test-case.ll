@@ -1,8 +1,6 @@
-@None = linkonce constant { {} (i64)*, {} (i64)* } { {} (i64)* @variant_clone_None, {} (i64)* @variant_drop_None }
+@None = linkonce constant i64 0
 @"Record(Record { name: \22prelude:error\22 })" = linkonce constant { {} (i64)*, {} (i64)* } { {} (i64)* @"variant_clone_Record(Record { name: \22prelude:error\22 })", {} (i64)* @"variant_drop_Record(Record { name: \22prelude:error\22 })" }
 
-declare {} @variant_clone_None(i64 %0)
-declare {} @variant_drop_None(i64 %0)
 declare {} @"variant_clone_Record(Record { name: \22prelude:error\22 })"(i64 %0)
 declare {} @"variant_drop_Record(Record { name: \22prelude:error\22 })"(i64 %0)
 declare fastcc {} @_if_2e({ i8*, i64, i64 }* %0, {} ({ i8*, i64, i64 }*, { { {} (i64)*, {} (i64)* }*, i64 })* %1, {}* %2, { i64, i8 }* %3, {}* %4, {}* %5)
@@ -43,26 +41,17 @@ then1:                                             ; No predecessors!
 
 define fastcc {} @_if_2d({ i8*, i64, i64 }* %0, {} ({ i8*, i64, i64 }*, { { {} (i64)*, {} (i64)* }*, i64 })* %1, {}* %2, { i64, i8 }* %3, { { {} (i64)*, {} (i64)* }*, i64 } %4, {}* %5, {}* %6) {
 entry:
-  %_fmm_315 = extractvalue { { {} (i64)*, {} (i64)* }*, i64 } %4, 0
-  %7 = ptrtoint { {} (i64)*, {} (i64)* }* %_fmm_315 to i64
-  %8 = icmp eq i64 %7, ptrtoint ({ {} (i64)*, {} (i64)* }* @None to i64)
-  br i1 %8, label %then, label %else
-
-then:                                             ; preds = %entry
   %_fmm_316 = extractvalue { { {} (i64)*, {} (i64)* }*, i64 } %4, 1
-  %9 = insertvalue { i64, [0 x i8] } zeroinitializer, i64 %_fmm_316, 0
-  %10 = alloca { i64, [0 x i8] }, align 8
-  store { i64, [0 x i8] } %9, { i64, [0 x i8] }* %10, align 4
-  %11 = bitcast { i64, [0 x i8] }* %10 to { [1 x i64] }*
-  %12 = load { [1 x i64] }, { [1 x i64] }* %11, align 4
-  %13 = alloca { [1 x i64] }, align 8
-  store { [1 x i64] } %12, { [1 x i64] }* %13, align 4
-  %14 = bitcast { [1 x i64] }* %13 to { {}, [8 x i8] }*
-  %15 = load { {}, [8 x i8] }, { {}, [8 x i8] }* %14, align 1
-  %_fmm_317 = extractvalue { {}, [8 x i8] } %15, 0
+  %_9 = insertvalue { i64, [0 x i8] } zeroinitializer, i64 %_fmm_316, 0
+  %_10 = alloca { i64, [0 x i8] }, align 8
+  store { i64, [0 x i8] } %_9, { i64, [0 x i8] }* %_10, align 4
+  %_11 = bitcast { i64, [0 x i8] }* %_10 to { [1 x i64] }*
+  %_12 = load { [1 x i64] }, { [1 x i64] }* %_11, align 4
+  %_13 = alloca { [1 x i64] }, align 8
+  store { [1 x i64] } %_12, { [1 x i64] }* %_13, align 4
+  %_14 = bitcast { [1 x i64] }* %_13 to { {}, [8 x i8] }*
+  %_15 = load { {}, [8 x i8] }, { {}, [8 x i8] }* %_14, align 1
+  %_fmm_317 = extractvalue { {}, [8 x i8] } %_15, 0
   %_result = tail call fastcc {} @_if_2e({ i8*, i64, i64 }* %0, {} ({ i8*, i64, i64 }*, { { {} (i64)*, {} (i64)* }*, i64 })* %1, {}* %2, { i64, i8 }* %3, {}* %5, {}* %6)
   ret {} %_result
-
-else:                                             ; preds = %entry
-  unreachable
 }
